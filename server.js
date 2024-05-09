@@ -16,7 +16,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 
-const PORT = 3000;
+//const PORT = 3000;
 // const db =
 //   "mongodb+srv://OlegPi4:Admfse01@cluster0.kjs3yzf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
@@ -28,8 +28,8 @@ mongoose
   .then((res) => console.log("Connected to DB"))
   .catch((error) => console.log(error));
 
-app.listen(PORT, (error) => {
-  error ? console.log(error) : console.log(`listening port ${PORT}`);
+app.listen(process.env.PORT, (error) => {
+  error ? console.log(error) : console.log(`listening port ${process.env.PORT}`);
 });
 
 app.use(
